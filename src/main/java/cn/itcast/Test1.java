@@ -39,8 +39,8 @@ public class Test1 {
         skuMap.put("name","华为p30pro新增新增");
         skuMap.put("brandName","华为");
         skuMap.put("categoryName","手机");
-        skuMap.put("price",3000);
-        skuMap.put("createTime","2014-11-05");
+        skuMap.put("price",1010221);
+        //skuMap.put("createTime","2014-11-05");
         skuMap.put("saleNum",101021);
         skuMap.put("commentNum",10102321);
         Map spec=new HashMap();
@@ -51,8 +51,8 @@ public class Test1 {
         bulkRequest.add(indexRequest);
 
         //3.获取执行结果
-        IndexResponse response = restHighLevelClient.index(indexRequest);
-        //BulkResponse response = restHighLevelClient.bulk(bulkRequest);
+        //IndexResponse response = restHighLevelClient.index(indexRequest);
+        BulkResponse response = restHighLevelClient.bulk(bulkRequest);
         int status = response.status().getStatus();
         System.out.println(status);
         restHighLevelClient.close();
